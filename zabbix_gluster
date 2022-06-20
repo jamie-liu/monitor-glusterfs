@@ -1,0 +1,8 @@
+Cmnd_Alias GLUSTER = /usr/sbin/gluster
+zabbix ALL = NOPASSWD: GLUSTER
+
+Defaults: zabbix !requiretty
+
+zabbix ALL=(ALL) NOPASSWD: /etc/zabbix_agentd.conf.d/scripts/gluster_mount.sh
+zabbix ALL=(ALL) NOPASSWD: /etc/zabbix_agentd.conf.d/scripts/gluster_heal.sh *
+zabbix ALL=(ALL) NOPASSWD: /etc/zabbix_agentd.conf.d/scripts/gluster_bricks.sh
